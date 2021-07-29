@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react'
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import student from "./images/college.png"
+import Navbar from './Navbar'
+import FloatingChar from './FloatingChar'
+import DefaultText from './DefaultText'
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+            {/* <div className="background-image"></div> */}
+        <Router>
+        <Route path='/:type' children={<FloatingChar />}></Route>
+        <Route path='/' exact>
+          <div  className="grid-container">
+              <h1><DefaultText/></h1>
+              <div className="floating">
+              <img src={student} className="fullPhoto" alt="charcater"/>
+              </div>
+            <Navbar iType="studies" />
+          </div>
+        </Route>
+      </Router>
+
+    </>
+  )
 }
 
-export default App;
+export default App

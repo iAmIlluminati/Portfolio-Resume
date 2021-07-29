@@ -1,13 +1,270 @@
+/* 
+body,
+html {
+  background-image: url('./images/indexGif.gif');
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  filter: blur(100px);
+  -webkit-filter: blur(4px);
+} */
+/* @font-face {
+  font-family: retroFont;
+  src: url(font/yoster.ttf);
+} */
+@font-face {
+  font-family: boldText;
+  src: url(font/ChubbyChoo-SemiBold.ttf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: lightText;
+  src: url(font/ChubbyChoo-Light.ttf);
+}
+
+body {
+  background-image: url('./images/dimSwitch2.png'),
+    url('./images/dimSwitch3.png'), url('./images/indexGif2.gif');
+
+  backdrop-filter: saturate(102%) contrast(120%) brightness(140%);
+  backdrop-filter: blur(0.5px); 
+  background-color: black;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-repeat: no-repeat;
+
+  /* width: 100.6vw;
+  height: 100.5vh; */
+}
+
+.textBox {
+  /* background-image: url('./images/textBox.png');
+  background-repeat: no-repeat; */
+  position: fixed;
+  width: 40%;
+  color: white;
+  margin-left: 3vw;
+
+  /* background-size: cover; */
+}
+
+* {
+  /* font-family: retroFont; */
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+img,
+.floating,
+.textBox {
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  z-index: 9999;
+}
+
+.floating {
+  left: 55vw;
+  top: 12vh;
+}
+
+.fullPhoto {
+  object-fit: cover;
+  height: 80vh;
+}
+
+.charSelect,
+li {
+  height: 10vh;
+  left: 80vw;
+  margin: 1vh;
+}
+
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+ul {
+  margin-top: 20vh;
+  list-style-type: none;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+
+  50% {
+    transform: translate(0, 25px);
+  }
+
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+/* html {
+  display: block;
+}
+body {
+  overflow-x: auto;
+  overflow-y: scroll;
+  display: block;
+} */
+/* The grid: Four equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.paintingBox {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+h2 {
+  font-family: boldText;
+  margin-left: 5rem;
+  margin-bottom: -2rem;
+  font-size: 1em;
+  color: rgb(255, 255, 255);
+}
+
+p {
+  font-family: boldText;
+  margin-left: 5rem;
+  margin-bottom: -2.5rem;
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+}
+
+h3,
+h4 {
+  margin-left: 5rem;
+  /* font-weight: 200; */
+  font-family: boldText;
+  margin-bottom: -3rem;
+  font-size: 0.87em;
+  color: rgb(206, 204, 204);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+
+
+
+
+
+
+
+
+.coin-container {
+  margin-top: 15vh;
+  grid-column-gap: 3vw;
+  display: grid;
+  grid-template-columns: 125px 125px 125px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.photoFrame {
+  background-image: url('./images/frame.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 125%;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  width: 100%;
+  margin-left: 10vw;
+  margin-top: 10vh;
+}
+
+
+
+.painting {
+  height: 15vw;
+  display: block;
+  margin: 0 auto;
+  margin-top: 22vh;
+  margin-left: 19.8vw;
+}
+
+.contact-grid {
+  margin-left: 5vw;
+  margin-top: 15vh;
+  display: grid;
+  grid-template-rows: 25vh;
+  grid-template-columns: 17vw 17vw 17vw;
+  justify-content: start;
+
+}
+
+.cImg {
+  position: relative;
+  height: 21vh;
+  display: block;
+
 }
